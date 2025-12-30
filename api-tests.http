@@ -1,0 +1,66 @@
+### 1. Create a Department - Engineering
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Engineering"
+}
+
+### 2. Create a Department - HR
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+  "name": "Human Resources"
+}
+
+### 3. Get All Departments
+GET http://localhost:8080/api/departments
+
+### 4. Create Employee - John Doe
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "role": "Senior Developer",
+  "departmentId": 1
+}
+
+### 5. Create Employee - Jane Smith
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "role": "HR Manager",
+  "departmentId": 2
+}
+
+### 6. Get All Employees (with pagination)
+GET http://localhost:8080/api/employees?page=0&size=10&sortBy=name&sortDir=asc
+
+### 7. Search Employees by Name (John)
+GET http://localhost:8080/api/employees?name=John
+
+### 8. Search Employees by Department (Engineering = ID 1)
+GET http://localhost:8080/api/employees?departmentId=1
+
+### 9. Search Employees by Role containing "Developer"
+GET http://localhost:8080/api/employees?role=Developer
+
+### 10. Get Single Employee by ID
+GET http://localhost:8080/api/employees/1
+
+### 11. Update Employee (change name and role)
+PUT http://localhost:8080/api/employees/1
+Content-Type: application/json
+
+{
+  "name": "John Doe Updated",
+  "role": "Tech Lead",
+  "departmentId": 1
+}
+
+### 12. Delete Employee
+DELETE http://localhost:8080/api/employees/1
